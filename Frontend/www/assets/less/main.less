@@ -1,3 +1,130 @@
 @mainColor: blue;
 
 @import "pizza/pizza-card";
+
+.top-panel{
+  width: 100%;
+  background-color: rgba(0,0,0,0.7);
+  left: 0px;
+  top: 0px;
+  position: fixed;
+  height: 75px;
+  z-index: 1;
+  .up{
+    left: 130px;
+    top: 10px;
+    position: fixed;
+    border-bottom: dotted 0.5px;
+    width: auto;
+  }
+  .phone-number{
+    box-sizing: border-box;
+    left: 130px;
+    top: 10px;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  .discount.top{
+    top: 0px;
+    height: 75px;
+    .roga{
+      transform: rotate(180deg);
+      top: 75px;
+    }
+    //position: fixed;
+    display: inline-block;
+    z-index: 1;
+  }
+  .btn.btn-warning{
+   // right: 10px;
+   // top: 5px;
+    float: right;
+    margin-top: -10px;
+    margin-left: 15px;
+  }
+
+
+}
+
+.main-header-top-item{
+  margin-left: 15px;
+  color: #a1a1a1;}
+
+
+#pizza_list{
+  padding-left: 25px;
+  padding-right: 280px;
+}
+
+img{
+  width: 100%;
+}
+
+.discount .roga{
+  background-image: url("../images/discount.svg");
+  width: 100px;
+  top: -11px;
+  height: 11px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.discount{
+  position: fixed;
+  left: 10px;
+  bottom: 0px;
+  width: 100px;
+  height: 120px;
+  background-color: #EA862E;
+  z-index: 2;
+}
+
+.delivery{
+  font-size: 20px;
+}
+
+.buy-list{
+  position: fixed;
+  right: 0px!important;
+  top: 0px!important;
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 3;
+
+  .r1{
+    display: block;
+    width: 100%;
+    height: 10%;
+  }
+
+  .r2{
+    display: block;
+    width: 100%;
+    height: 80%;
+    background-color: #f5f5f5;
+  }
+
+  .r3{
+    display: block;
+    width: 100%;
+    height: 10%;
+    .btn{
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 5%;
+      width: 80%;
+
+    }
+  }
+}
+
+.container-fuild{
+  top: 100px!important;
+  padding-top: 100px;
+}
+
+body{
+  background-color: #fffff5;
+  min-width: 450px;
+}
