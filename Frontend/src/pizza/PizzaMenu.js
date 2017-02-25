@@ -29,21 +29,85 @@ function showPizzaList(list) {
     }
 
     list.forEach(showOnePizza);
-}
+
+    }
+
+$(".filter-button-all-pizza").click(function () {
+    filterPizza(0);
+    $(".active").removeClass("active");
+    $(".filter-button-all-pizza").addClass("active");
+});
+
+$(".filter-button-meat").click(function () {
+    filterPizza(1);
+    $(".active").removeClass("active");
+    $(".filter-button-meat").addClass("active");
+});
+
+$(".filter-button-ananas").click(function () {
+    filterPizza(2);
+    $(".active").removeClass("active");
+    $(".filter-button-ananas").addClass("active");
+});
+
+$(".filter-button-mashrooms").click(function () {
+    filterPizza(3);
+    $(".active").removeClass("active");
+    $(".filter-button-mashrooms").addClass("active");
+});
+
+$(".filter-button-sea").click(function () {
+    filterPizza(4);
+    $(".active").removeClass("active");
+    $(".filter-button-sea").addClass("active");
+});
+
+$(".filter-button-vega-shit").click(function () {
+    filterPizza(5);
+    $(".active").removeClass("active");
+    $(".filter-button-vega-shit").addClass("active");
+});
 
 function filterPizza(filter) {
     //Масив куди потраплять піци які треба показати
     var pizza_shown = [];
 
     Pizza_List.forEach(function(pizza){
-     // if(pizza.)
+        switch (filter){
+            case 0:
+                pizza_shown.push(pizza);
+                break;
+            case 1:
+                if(pizza.content.meat!=undefined)
+                    pizza_shown.push(pizza);
+                break;
+            case 2:
+                if(pizza.content.pineapple!=undefined)
+                    pizza_shown.push(pizza);
+                break;
+            case 3:
+                if(pizza.content.mushroom!=undefined)
+                    pizza_shown.push(pizza);
+                break;
+            case 4:
+                if(pizza.content.ocean!=undefined)
+                    pizza_shown.push(pizza);
+                break;
+            case 5:
+                if(pizza.content.meat==undefined)
+                    pizza_shown.push(pizza);
+                break;
+            default:
+                pizza_shown.push(pizza);
+                break;
+        }
         //pizza_shown.push(pizza);
 
         //TODO: зробити фільтри
     });
 
     //Показати відфільтровані піци
-    showPizzaList(pizza_shown);
+     showPizzaList(pizza_shown);
 }
 
 function initialiseMenu() {
