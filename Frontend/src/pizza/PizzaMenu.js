@@ -36,7 +36,7 @@ function filterPizza(filter) {
     var pizza_shown = [];
 
     Pizza_List.forEach(function(pizza){
-        //Якщо піка відповідає фільтру
+     // if(pizza.)
         //pizza_shown.push(pizza);
 
         //TODO: зробити фільтри
