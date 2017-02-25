@@ -29,7 +29,7 @@ function showPizzaList(list) {
     }
 
     list.forEach(showOnePizza);
-
+        $(".sort-pizzas .badge.orange.orders-count-span").html ( list.length);
     }
 
 $(".filter-button-all-pizza").click(function () {

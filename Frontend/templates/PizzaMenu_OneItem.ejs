@@ -28,8 +28,8 @@ function getIngredientsArray(pizza) {
         <% } %>
 
         <div class="caption">
-            <span class="title"><%= pizza.title %></span>
-            <div class="type"><%= pizza.type %></div>
+            <div class="title" style="text-align: left;font-size: 17px"><%= pizza.title %></div>
+            <div class="type" style="text-align: left;font-size: 17px"><%= pizza.type %></div>
             <div class="description">
                 <%= getIngredientsArray(pizza).join(", ") %>
             </div>
