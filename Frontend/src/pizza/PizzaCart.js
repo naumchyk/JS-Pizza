@@ -18,7 +18,7 @@ var Cart = [];
 var $cart = $("#cart");
 
 
-function addToCart(pizza, size) {
+function addToCart(pizza, size, price) {
     var n=-1;
     for(var i = 0;i<Cart.length;i++)
        if((Cart[i].pizza==pizza)&&(Cart[i].size==size))
@@ -29,7 +29,8 @@ function addToCart(pizza, size) {
         Cart.push({
             pizza: pizza,
             size: size,
-            quantity: 1
+            quantity: 1,
+            price:price
         });
    }
     updateCart();
@@ -85,6 +86,9 @@ function updateCart() {
             //Оновлюємо відображення
             updateCart();
         });
+        $node.find(".cancel").click(function () {
+            removeFromCart(cart_item);
+        });
 
         $node.find(".minus").click(function () {
             cart_item.quantity--;
@@ -97,8 +101,19 @@ function updateCart() {
 
     Cart.forEach(showOnePizzaInCart);
 
-    if(Cart.length==0)
-        $cart.html(" Пусто в холодильнику? <br> Замовте піцу!");
+    if(Cart.length==0){
+
+        $cart.html(" Пусто в холодильнику? <br> Замовте піцу!");}
+    $(".r1 .badge.orange.orders-count-span").html(Cart.length);
+    $(".r3 .price").html("Сума: "+suma()+"грн.")
+
+    function suma() {
+        var s = 0;
+        for(var i = 0;i<Cart.length;i++) {
+            s += Cart[i].quantity * Cart[i].price;
+        }
+        return s;
+    }
 
 }
 
