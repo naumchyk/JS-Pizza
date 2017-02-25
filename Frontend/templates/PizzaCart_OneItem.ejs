@@ -1,6 +1,7 @@
 <div>
     <%= pizza.title %> (<%= size %>)
     <div>Ціна: <%= pizza[size].price %> грн.</div>
+    <img class="pizza-icon" src="<%= pizza.icon %>" alt="Pizza">
     <div>
         <button class="btn btn-danger minus">-</button>
         <span class="label label-default"><%= quantity %></span>
