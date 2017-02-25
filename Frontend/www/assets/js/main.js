@@ -432,7 +432,7 @@ function filterPizza(filter) {
                     pizza_shown.push(pizza);
                 break;
             case 5:
-                if(pizza.content.meat==undefined)
+                if(pizza.content.meat==undefined&&pizza.ocean==undefined)
                     pizza_shown.push(pizza);
                 break;
             default:
@@ -441,7 +441,6 @@ function filterPizza(filter) {
         }
         //pizza_shown.push(pizza);
 
-        //TODO: зробити фільтри
     });
 
     //Показати відфільтровані піци
