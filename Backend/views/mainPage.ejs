@@ -1,0 +1,110 @@
+<% include common/header.ejs %>
+
+<div class="discount">
+    <div class="roga"></div>
+    <p style="font-size: 20px; color: white; text-align: center">
+        Цього тижня <br>на все</p>
+    <p style="font-size: 20px; color: white; text-align: center; border-top: dotted 1px">
+        -20%</p>
+
+</div>
+
+<div class="top-panel">
+    <div class="discount top">
+        <div class="roga"></div>
+        <p style="font-size: 20px; color: white; text-align: center">PIZZA <br>KMA</p>
+    </div>
+    <div class="up main-header-top-items">
+        <div class="main-header-top-item phone-number visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">
+            (044) 222 5 222
+        </div>
+        <div class="visible-md-inline-block visible-lg-inline-block main-header-top-item work-days ">
+            24 години/ 7 днів на тиждень
+        </div>
+        <div class="visible-lg-inline-block main-header-top-item delivery  ">
+            Безкоштовна доставка піци
+        </div>
+        <div type="button" class="btn btn-warning">Ввійти</div>
+    </div>
+    <div class="down"></div>
+</div>
+<div class="container-fuild">
+
+    <div class="container">
+
+
+        <div class="sort-pizzas" style="text-align: center;">
+            <h2>
+                <span style="font-size: 20px">Усі піци</span>
+                <span class="badge orange orders-count-span">9</span>
+            </h2>
+            <ul class="nav nav-pills" style="text-align: center; display: inline-block">
+                <li role="presentation" class="active pizza-filter-button filter-button-all-pizza" >
+                    <a href="#">
+                        Усі
+                    </a>
+                </li>
+                <li role="presentation" class="pizza-filter-button filter-button-meat" >
+                    <a href="#">
+                        Мясні
+                    </a>
+                </li>
+                <li role="presentation" class="pizza-filter-button filter-button-ananas" >
+                    <a href="#">
+                        З ананасами
+                    </a>
+                </li>
+                <li role="presentation" class="pizza-filter-button filter-button-mashrooms" >
+                    <a href="#">
+                        З грибами
+                        <!--I can`t eat mashrooms, i have promise him...-->
+                    </a>
+                </li>
+                <li role="presentation" class="pizza-filter-button filter-button-sea" >
+                    <a href="#">
+                        З морепродуктами
+                    </a>
+                </li>
+                <li role="presentation" class="pizza-filter-button filter-button-vega-shit" >
+                    <a href="#">
+                        Вега
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row" id="pizza_list">
+
+        </div>
+        <div class="buy-list" >
+            <div class="r1 "style="margin-bottom: 2px;border-bottom: 1px dotted #fffff5" >
+                   <span class="ord">Замовлено
+                   <span class="badge orange orders-count-span">0</span>
+                   </span>
+                <span class="clear-list">
+                        Очистити замовлення
+                    </span>
+
+            </div>
+            <div class="r2" id="cart" style="overflow: scroll">
+
+            </div>
+            <div class="r3">
+                <div class="price"></div>
+                <a href="order" type="button" class="btn btn-lg btn-warning" >Замовити</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <p>
+            Pizza.22 - практичний проект в межах курсу JavaScript в Києво-Могилянській Академії
+        </p>
+        <p>
+            Доставка піци не здійснюється
+        </p>
+    </footer>
+</div>
+<% include common/footer.ejs %>
