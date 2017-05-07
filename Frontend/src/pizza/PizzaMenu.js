@@ -5,6 +5,78 @@ var Templates = require('../Templates');
 var PizzaCart = require('./PizzaCart');
 var Pizza_List = require('../Pizza_List');
 
+$(".send").click(function () {
+    if(send()){
+        alert($(".inputName").val()+"\n"+
+            $("#inputNumber").val()+"\n"+
+            $("#inputAdress").val()+"\n"+
+            (PizzaCart.getPizzaInCart())
+        );
+        data = {
+            Name :$(".inputName").val(),
+            Number:$("#inputNumber").val(),
+            Adress: $("#inputAdress").get(),
+            pizzas : PizzaCart.getPizzaInCart()
+        }
+        postRequest("/order/data/",data,alert);
+    }
+});
+
+function	postRequest
+(url,	data,	callback)	{
+    $.ajax({
+        url:	url,
+        type:	'POST',
+        contentType :	'application/json',
+        data:	JSON.
+        stringify(data),
+        success:	function(data){
+        callback(null,	data);
+    },
+    fail:	function()	{
+        callback(new	Error("Ajax	Failed"));
+    }
+})
+}
+
+function send() {
+    var $name = $(".inputName");
+    var $adress = $("#inputAdress");
+    var $phone = $("#inputNumber");
+    var valiable = true;
+
+    if($name.val()!=""){
+        $(".form-group-name").removeClass("has-error");
+        $(".form-group-name").addClass("has-success");
+    }
+    else{
+        $(".form-group-name").removeClass("has-success");
+        $(".form-group-name").addClass("has-error");
+        valiable = false;
+    }
+    var phone = parseInt($phone.val());
+    console.log($phone.val().length);
+    if(phone!=NaN&&($phone.val().length==12)||($phone.val().length==10)){
+        $(".form-group-number").removeClass("has-error");
+        $(".form-group-number").addClass("has-success");
+    }
+    else{
+        $(".form-group-number").removeClass("has-success");
+        $(".form-group-number").addClass("has-error");
+        valiable = false;
+    }
+    if($adress.val()!=""){
+        $(".form-group-adress").removeClass("has-error");
+        $(".form-group-adress").addClass("has-success");
+    }
+    else{
+        $(".form-group-adress").removeClass("has-success");
+        $(".form-group-adress").addClass("has-error");
+        valiable = false;
+    }
+return valiable;
+}
+
 //HTML едемент куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
 
