@@ -3,6 +3,7 @@
  */
 var Templates = require('../Templates');
 var Storage = require("./storage");
+var price = 0;
 
 //Перелік розмірів піци
 var PizzaSize = {
@@ -106,19 +107,22 @@ function updateCart() {
     if(Cart.length==0){
 
         $cart.html(" Пусто в холодильнику? <br> Замовте піцу!");}
+
     $(".r1 .badge.orange.orders-count-span").html(Cart.length);
     $(".r3 .price").html("Сума: "+suma()+"грн.")
 
-    function suma() {
-        var s = 0;
-        for(var i = 0;i<Cart.length;i++) {
-            s += Cart[i].quantity * Cart[i].price;
-        }
-        return s;
-    }
+
 
     Storage.set('cart',Cart);
 
+}
+
+function suma() {
+    var s = 0;
+    for(var i = 0;i<Cart.length;i++)
+        s+=Cart[i].price*Cart[i].quantity;
+    price = s;
+    return s;
 }
 
 exports.removeFromCart = removeFromCart;
@@ -126,5 +130,6 @@ exports.addToCart = addToCart;
 
 exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
+exports.price = suma();
 
 exports.PizzaSize = PizzaSize;
